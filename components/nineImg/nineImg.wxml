@@ -1,0 +1,17 @@
+<!--components/nineImg/nineImg.wxml-->
+<view class="container">
+    <view class="img-container">
+        <image 
+            catch:tap="onTap" 
+            wx:for="{{ imgArr }}" 
+            wx:key="{{ index }}" 
+            src="{{ item }}"
+            data-index="{{ index }}" 
+            wx:if="{{ index < 9 }}"
+        />
+        <text class="img-count" wx:if="{{ imgArr.length > 9 }}">+{{ imgArr.length - 9 }}</text>
+    </view>
+    <view class="text-wrapper">
+        <text >{{ mainTitle }}</text>
+    </view>
+</view>

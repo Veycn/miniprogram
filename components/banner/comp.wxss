@@ -1,0 +1,17 @@
+/* components/article/comp.wxss */
+.container {
+    padding: 20rpx;
+}
+
+.avatar {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+    vertical-align: middle;
+}
+
+.title {
+    font-size: 28rpx;
+    color: #666;
+}

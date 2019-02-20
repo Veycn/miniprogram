@@ -1,0 +1,15 @@
+{
+    "component": true,
+    "usingComponents": {
+        "v-imgText": "/components/imgtext/comp",
+        "v-nineImg": "/components/nineImg/nineImg",
+        "v-video": "/components/video/comp",
+        "v-tag": "/components/tag/comp",
+        "v-more": "/components/more/more",
+        "v-like": "/components/like/like",
+        "v-banner": "/components/banner/comp",
+        "v-bigImg": "/components/bigImg/comp",
+        "v-pureText": "/components/pureText/comp",
+        "v-share": "/components/share/comp"
+    }
+}

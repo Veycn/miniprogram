@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="container">
+    <!-- <v-articleList article-list="{{ ArticleList }}" more="{{ getMore }}" mId="{{ mId }}"/> -->
+    <v-nav />
+</view>

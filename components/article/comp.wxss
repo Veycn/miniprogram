@@ -1,0 +1,20 @@
+/* components/article/comp.wxss */
+.container {
+    background: #fff;
+}
+.control-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx;
+    margin-top: 10rpx;
+}
+
+.control-box {
+    display: flex;
+}
+
+.box {
+    display: block;
+    margin-left: 25rpx;
+}

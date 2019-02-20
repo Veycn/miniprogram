@@ -1,0 +1,2 @@
+<!--components/tag/comp.wxml-->
+<text class="container" catch:tap="jumpto">{{ tagName }}</text>

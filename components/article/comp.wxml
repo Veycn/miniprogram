@@ -1,0 +1,41 @@
+<view class="container" catch:tap="ontap">
+    <v-banner 
+        avatar-src="{{ articleDetail.mark.avatar }}"
+        mark-num="{{ articleDetail.mark.count }}"
+        nick-name="{{ articleDetail.mark.people }}"/>
+    <v-bigImg 
+        wx:if="{{ articleDetail.type === 0 }}" 
+        img-src="{{ articleDetail.imgArray[0] }}" 
+        title="{{ articleDetail.mainTitle}}" />
+    <v-nineImg 
+        wx:elif="{{ articleDetail.type === 1 }}" 
+        img-arr="{{articleDetail.imgArray}}" />
+    <v-imgText 
+        wx:elif="{{ articleDetail.type === 2 }}" 
+        main-title="{{ articleDetail.mainTitle}}" 
+        sub-title="{{ articleDetail.subHead }}" 
+        imgSrc="{{ articleDetail.imgArray[0] }}" />
+    <v-video 
+        wx:elif="{{ articleDetail.type === 3 }}" 
+        video-id="{{ articleDetail.videoId }}" 
+        src="{{ articleDetail.video.src }}" 
+        poster="{{ articleDetail.video.poster }}" 
+        duration="{{ articleDetail.video.duration }}" 
+        main-title="{{ articleDetail.video.mianTitle }}" />
+    <v-pureText 
+        wx:else 
+        main-title="{{ articleDetail.mainTitle }}" 
+        sub-head="{{ articleDetail.subHead }}" />
+    <view class="control-container">
+        <view >
+            <v-tag 
+                tag-name="{{ articleDetail.tag }}"
+                tag-id="{{ articleDetail.tagId }}"
+            />
+        </view>
+        <view class="control-box">
+            <v-more class="box" tag-name="{{  articleDetail.tag }}"/>
+            <v-like class="box" like="{{ articleDetail }}"/>
+        </view>
+    </view>
+</view>

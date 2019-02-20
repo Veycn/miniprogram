@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "v-article": "/components/article/comp",
+        "v-loading": "/components/loading/comp"
+    }
+}

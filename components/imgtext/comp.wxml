@@ -1,0 +1,10 @@
+<!--components/imgtext/comp.wxml-->
+<view class="container">
+    <view class="title-wrapper">
+        <view class="mian-title">{{ mainTitle }}</view>
+        <view class="sub-title">{{ subTitle }}</view>
+    </view>
+    <view class="img-wrapper">
+        <image class="image" mode="widthFix" src="{{ imgSrc }}" />
+    </view>
+</view>

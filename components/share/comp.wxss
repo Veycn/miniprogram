@@ -1,0 +1,10 @@
+/* components/share/comp.wxss */
+.container {
+    width: 50rpx;
+    height: 50rpx;
+    display: inline-block;
+}
+image {
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,13 @@
+<!--components/nav/comp.wxml-->
+<scroll-view class="container" 
+        scroll-x="true" 
+        scroll-with-animation="{{ true }}"
+        scroll-into-view="{{ activeId }}">
+    <text class="type {{ curIndex === index ? 'active' : '' }}" 
+        wx:for="{{ list }}" 
+        wx:key="index"
+        catch:tap="onTap"
+        data-index="{{ index }}"
+        id="{{ 'm' + index }}"
+    >{{ item }}</text>
+</scroll-view>

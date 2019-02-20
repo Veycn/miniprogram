@@ -1,0 +1,7 @@
+<!--components/article/comp.wxml-->
+<view class="container">
+    <view class="wrapper">
+        <image class="avatar" src="{{ avatarSrc }}" />
+        <text class="title">{{ nickName }}等{{ markNum }}人马克了</text>
+    </view>
+</view>

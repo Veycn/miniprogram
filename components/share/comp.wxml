@@ -1,0 +1,4 @@
+<!--components/share/comp.wxml-->
+<view class="container" catch:tap="onTap">
+    <image src="./image/relay.png" />
+</view>

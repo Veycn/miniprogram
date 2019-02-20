@@ -1,0 +1,17 @@
+/* components/nav/comp.wxss */
+.container {
+    width: 750rpx;
+    padding: 30rpx;
+    background: #fff;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+.type {
+    font-size: 40rpx;
+    padding: 0 30rpx;
+    color: #888;
+}
+
+.active {
+    color: #000;
+}

@@ -1,0 +1,11 @@
+<!-- components/articleList/comp.wxml -->
+<view class="container">
+    <block wx:for="{{articleList}}" wx:key="item.artId">
+        <v-article class="article" article-detail="{{ item }}" />
+    </block>
+    <v-loading 
+        hidden="{{ !loading }}" 
+        wx:if="{{ !noMore }}"
+        class="loading" />
+    <text class="no-more" wx:if="{{ noMore }}">没有更多了</text>
+</view>

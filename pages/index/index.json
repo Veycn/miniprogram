@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "v-articleList": "/components/articleList/comp",
+        "v-nav": "/components/nav/comp"
+    }
+}

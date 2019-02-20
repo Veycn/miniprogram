@@ -1,0 +1,10 @@
+/* components/more/more.wxss */
+.container {
+    display: inline-block;
+    width: 50rpx;
+    height: 50rpx;
+}
+.image {
+    width: 100%;
+    height: 100%;
+}
