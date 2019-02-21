@@ -1,6 +1,7 @@
 {
     "usingComponents": {
         "v-articleList": "/components/articleList/comp",
-        "v-nav": "/components/nav/comp"
+        "v-nav": "/components/nav/comp",
+        "v-recommend": "/components/recommend/comp"
     }
 }
