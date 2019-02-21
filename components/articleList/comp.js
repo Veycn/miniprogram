@@ -5,6 +5,10 @@ Component({
     /**
      * 组件的属性列表
      */
+
+     // index 页面触发触底事件, 触底即发送请求获取更多数据
+     // 如果触底了, 就会生成一个字符串, 传递给此组件, 通过 observer 函数: loadMore 去加载
+     // 当然也可以将此组件放入一个 scroll-view 中, 通过内置的触底事件去请求新数据
     properties: {
         articleList: Array,
         more: {
@@ -12,7 +16,11 @@ Component({
             value: '',
             observer: 'loadMore'
         },
-        mId: Number
+        mId: {
+            type: Number,
+            value: 0,
+            observer: 'hasMoreData'
+        }
     },
 
     /**
@@ -51,6 +59,11 @@ Component({
                     // 加载完毕, 将锁打开
                     loading: false
                 })
+            })
+        },
+        hasMoreData (){
+            this.setData({
+                noMore: false
             })
         }
     }

@@ -22,10 +22,16 @@ Component({
     methods: {
         onTap (e) {
             let index = e.currentTarget.dataset.index
+            let lastIndex = this.data.curIndex 
+            // 将当前的 curIndex 临时保存一下, 便于比较 
+            // 如果不保存, 下面设置 curIndex肯定与新的 index 相等
+            // 这样就不能阻止连续点击同一个标签, 从而触发多次相同的数据请求了
             this.setData({
                 curIndex: index,
                 activeId: `m${index === 0 ? 0 : index - 1}`
             })
+            if(lastIndex === index) return // 如果两次点击的标签一样, 不允许请求数据
+            this.triggerEvent('nav', {index}, {})
         }
     }
 })

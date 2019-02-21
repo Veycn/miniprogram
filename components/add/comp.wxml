@@ -1,0 +1,4 @@
+<!--components/add/comp.wxml-->
+<view class="container">
+    +
+</view>

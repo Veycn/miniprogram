@@ -31,14 +31,14 @@ class indexModel extends request {
             url: `/getIndexArticleList/${mId}/${start}`
         })
     }
-    getMarkList () {
+    getMarkList (mId=0) {
         return this.getData({
-            url: '/getMarkTypeList/0'
+            url: `/getMarkTypeList/${mId}`
         })
     }
-    getRecommendInfo () {
+    getRecommendInfo (mId=0) {
         return this.getData({
-            url: '/getRecommendInfo/0'
+            url: `/getRecommendInfo/${mId}`
         })
     }
 }

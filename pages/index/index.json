@@ -2,6 +2,9 @@
     "usingComponents": {
         "v-articleList": "/components/articleList/comp",
         "v-nav": "/components/nav/comp",
-        "v-recommend": "/components/recommend/comp"
+        "v-recommend": "/components/recommend/comp",
+        "v-tagList": "/components/tagList/comp",
+        "v-add": "/components/add/comp",
+        "v-loading": "/components/loading/comp"
     }
 }

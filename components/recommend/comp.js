@@ -4,14 +4,22 @@ Component({
      * 组件的属性列表
      */
     properties: {
-        recommend: Object
+        recommend: Object,
+        mId: {
+            type: Number,
+            value: 0,
+            observer(newVal){
+                console.log(newVal)
+            }
+        }
     },
 
     /**
      * 组件的初始数据
      */
     data: {
-        date: ''
+        date: '',
+        mArr: ["轻芒", "兴趣", "物质", "世界", "新事", "灵魂"]
     },
     attached () {
         this.getDate()

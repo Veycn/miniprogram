@@ -1,6 +1,13 @@
 <!--index.wxml-->
 <view class="container">
-    <!-- <v-articleList article-list="{{ ArticleList }}" more="{{ getMore }}" mId="{{ mId }}"/> -->
-    <v-nav />
-    <v-recommend recommend="{{ RecommendInfo }}"/>
+    <v-nav class="nav-bar" catch:nav="onNav"/>
+    <v-recommend class="recommend" m-id="{{ mId }}" recommend="{{ RecommendInfo }}" mark-list="{{ MarkList }}"/>
+    <view class="loading-container" wx:if="{{ loading }}">
+        <v-loading class="loading"/>
+    </view>
+    <v-tagList mark-list="{{ MarkList }}">
+        <v-add slot="before" class="add" wx:if="{{ mId === 0 }}"/>
+        <view slot="after" class="to-catelog" catch:tap="toCatelog" wx:if="{{ mId === 0 }}">···</view>
+    </v-tagList>
+    <v-articleList article-list="{{ ArticleList }}" more="{{ getMore }}" mId="{{ mId }}"/>
 </view>

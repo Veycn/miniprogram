@@ -1,6 +1,8 @@
 //index.js
 //获取应用实例
 import {indexModel} from '../../utils/request'
+// random 模块生成一个长度为20的字符串, 因为相邻两次生成相同的概率极低
+// 用来作为阻止连续触发下拉触底事件
 import {random} from '../../utils/randomStr'
 const index = new indexModel
 const app = getApp()
@@ -20,10 +22,45 @@ Page({
       url: '../logs/logs'
     })
   },
-  getData () {
-    let getArticleList = index.getArticleList()
-    let getMarkList = index.getMarkList()
-    let getRecommendInfo = index.getRecommendInfo()
+  onLoad: function () {
+    this.getData(),
+    this.showLoading()
+  },
+  getUserInfo: function(e) {
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+  },
+  onNav (e) {
+    wx.pageScrollTo({
+      scrollTop: 0
+    })
+    this.setData({
+      mId: e.detail.index
+    })
+    this.getData(e.detail.index)
+  },
+  showLoading() {
+    this.setData({
+      loading: true
+    })
+  },
+  hideLoading(){
+    this.setData({
+      loading: false
+    })
+  },
+  toCatelog () {
+    wx.navigateTo({
+      url: "/pages/catelog/catelog"
+    })
+  },
+  getData (mId) {
+    let getArticleList = index.getArticleList(mId)
+    let getMarkList = index.getMarkList(mId)
+    let getRecommendInfo = index.getRecommendInfo(mId)
     Promise.all([getArticleList, getMarkList, getRecommendInfo]).then(res => {
       console.log(res[0].data.data)
       console.log(res[1].data.data)
@@ -31,49 +68,9 @@ Page({
       this.setData({
         ArticleList: res[0].data.data,
         MarkList: res[1].data.data,
-        RecommendInfo: res[2].data.data
+        RecommendInfo: res[2].data.data,
       })
-      wx.hideLoading()
-    })
-  },
-  onLoad: function () {
-    wx.showLoading()
-    this.getData()
-    //index.getArticleList().then( res => {console.log(res)})
-
-    // if (app.globalData.userInfo) {
-    //   this.setData({
-    //     userInfo: app.globalData.userInfo,
-    //     hasUserInfo: true
-    //   })
-    // } else if (this.data.canIUse){
-    //   // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-    //   // 所以此处加入 callback 以防止这种情况
-    //   app.userInfoReadyCallback = res => {
-    //     this.setData({
-    //       userInfo: res.userInfo,
-    //       hasUserInfo: true
-    //     })
-    //   }
-    // } else {
-    //   // 在没有 open-type=getUserInfo 版本的兼容处理
-    //   wx.getUserInfo({
-    //     success: res => {
-    //       app.globalData.userInfo = res.userInfo
-    //       this.setData({
-    //         userInfo: res.userInfo,
-    //         hasUserInfo: true
-    //       })
-    //     }
-    //   })
-    // }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      this.hideLoading()
     })
   },
   onReachBottom () {

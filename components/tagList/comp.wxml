@@ -1,1 +1,11 @@
 <!--components/tagList/comp.wxml-->
+<view class="container">
+    <slot name="before"></slot>
+    <v-tag 
+        class="tag"
+        wx:for="{{markList}}" 
+        wx:key="{{ index }}" 
+        tag-id="{{item.typeId}}" 
+        tag-name="{{ item.type }}"/>
+    <slot name="after"></slot>
+</view>

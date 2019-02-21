@@ -1,1 +1,11 @@
 /* components/tagList/comp.wxss */
+
+.container {
+    background: #fff;
+    padding: 25rpx;
+}
+.tag {
+    display: inline-block;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+}

@@ -1,13 +1,10 @@
-// components/tagList/comp.js
+// components/add/comp.js
 Component({
     /**
      * 组件的属性列表
      */
-    options: {
-        multipleSlots: true
-    },
     properties: {
-        markList: Array
+
     },
 
     /**
@@ -16,9 +13,7 @@ Component({
     data: {
 
     },
-    attached(){
-        
-    },
+
     /**
      * 组件的方法列表
      */
